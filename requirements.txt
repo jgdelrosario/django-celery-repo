@@ -1,0 +1,12 @@
+# Django>=4.0
+# djangorestframework
+# celery
+# redis
+# psycopg2-binary
+
+Django>=3.2,<4.0
+djangorestframework
+celery==4.4.7  # Earlier Celery release
+kombu==4.6.11  # Matches Celery 4.4.x
+redis==3.5.3   # Compatible with older Kombu and Celery
+psycopg2-binary
