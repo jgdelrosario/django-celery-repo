@@ -25,7 +25,7 @@ services:
     env_file:
       - .env
     ports:
-      - '5434:5432'
+      - '5435:5432'
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
@@ -38,14 +38,11 @@ services:
 
   celery:
     build: .
-    command: celery -A django_celery_app worker --loglevel=info
+    command: celery -A django_celery_app worker
     env_file:
       - .env
     volumes:
       - .:/code
-    depends_on:
-      - web
-      - db
     networks:
       - backend
 
